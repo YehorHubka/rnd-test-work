@@ -1,0 +1,894 @@
+.arrow-home {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 15;
+    @include media("<tablet") {
+      left: 10px;
+      top: 10px;
+      .home-wrapp--overview & {
+        top: 15px;
+      }
+    }
+  }
+  
+  .arrow-home_icon {
+    width: 100%;
+    height: auto;
+  }
+  
+  .home-wrapp {
+    position: relative;
+    //background-image: url('../assets/img/main-page-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(100vh - 50px);
+    height: calc((var(--vh, 1vh) * 100) - 50px);
+    overflow: hidden;
+    padding-top: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-bottom: 40px;
+  
+    @include media("<smallTablet") {
+      height: calc(100vh - 39px);
+      height: calc((var(--vh, 1vh) * 100) - 39px);
+    }
+  
+    @include media("<phone") {
+      margin-bottom: 40px;
+      overflow: hidden;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: auto;
+      background-size: auto 100%;
+      background-position: center top;
+      padding-bottom: 0;
+      padding-top: 38px;
+    }
+  }
+  
+  .home-wrapp-content {
+    height: 330px;
+    // margin-top: 50px;
+    padding: 0;
+  
+    .home_footnote-page {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+  
+    .home-title__wrap {
+      top: 55%;
+      transform: translate(0, -50%);
+      transition: all 0.5s ease;
+    }
+  
+    @include media("<phone") {
+      margin-bottom: 0;
+      margin-top: 38px;
+      justify-content: center;
+      height: 280px;
+      background-size: cover !important;
+      .home-pages-bg__image {
+        background-size: cover !important;
+      }
+      .home-title__wrap {
+        height: auto;
+        top: calc(50% - 0px);
+      }
+      .home-info__title {
+        font-weight: 500;
+        max-width: 450px;
+        padding: 0 40px;
+        margin: 0 auto;
+      }
+      .home_footnote-page {
+        padding-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  
+    @media screen and (max-width: 600px) {
+      height: calc(100vh - 179px);
+      height: calc(var(--vh, 1vh) * 100 - 179px);
+    }
+  }
+  
+  .home-pages-bg {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #3ac6e7;
+  
+    @include media("<smallTablet") {
+      top: 38px;
+    }
+  
+    @include media("<phone") {
+      top: 38px;
+    }
+  
+    &--overview,
+    &--complicated {
+      @include media("<phone") {
+        background-image: url("../assets/img/HeroImage01_Mobile.jpeg");
+        // top: auto;
+      }
+    }
+  
+    &--fatigue,
+    &--phenotypes {
+      @include media("<phone") {
+        background-image: url("../assets/img/HeroImage02_Mobile.jpg");
+        top: auto;
+        bottom: 0;
+      }
+    }
+  
+    &--patients,
+    &--whypsma {
+      @include media("<phone") {
+        background-image: url("../assets/img/HeroImage03.png");
+        top: auto;
+        bottom: 0;
+      }
+    }
+  }
+  
+  .home-wrapp-content {
+    .home-pages-bg {
+      @include media("<phone") {
+        top: 0;
+      }
+    }
+  }
+  
+  .home-pages-bg__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: calc(100% + 5px);
+    margin-left: -2px;
+    height: 100%;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    transition: opacity 1s ease;
+  
+    &--default {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(58, 198, 231, 0) 80%,
+          #3ac6e7 100%
+        ),
+        url("../assets/img/HeroImage00_Desktop.jpeg");
+  
+      .home-wrapp--patients &,
+      .home-wrapp--overview &,
+      .home-wrapp--fatigue & {
+        background-image: none;
+      }
+  
+      @include media("<tablet") {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(58, 198, 231, 0) 80%,
+            #3ac6e7 100%
+          ),
+          url("../assets/img/home-tablet-1.png");
+      }
+  
+      @include media("<tablet", "landscape") {
+        background-position: 0;
+      }
+    }
+  
+    &--first {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(58, 198, 231, 0) 80%,
+          #3ac6e7 100%
+        ),
+        url("../assets/img/HeroImage01_Desktop.jpeg");
+      top: auto;
+      background-size: cover;
+      background-position: 50% 12%;
+  
+      @media screen and (min-width: 1360px) and (max-width: 1360px) and (min-height: 690px) and (max-height: 690px) {
+        background-size: 100%;
+        background-position: center top;
+      }
+      @include media("<phone") {
+        .home-wrapp--home & {
+          bottom: 292px;
+        }
+      }
+  
+      @include media("<tablet") {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(58, 198, 231, 0) 80%,
+            #3ac6e7 100%
+          ),
+          url("../assets/img/home-tablet-2.png");
+      }
+    }
+  
+    &--second {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(58, 198, 231, 0) 80%,
+          #3ac6e7 100%
+        ),
+        url("../assets/img/HeroImage02_Desktop.jpeg");
+      top: auto;
+      bottom: 0;
+      background-size: cover;
+      background-position: 50% 30%;
+  
+      @media screen and (min-width: 1360px) and (max-width: 1360px) and (min-height: 690px) and (max-height: 690px) {
+        background-size: 100%;
+        background-position: center top;
+      }
+  
+      @include media("<phone") {
+        .home-wrapp--home & {
+          bottom: 146px;
+        }
+      }
+  
+      @include media("<tablet") {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(58, 198, 231, 0) 80%,
+            #3ac6e7 100%
+          ),
+          url("../assets/img/home-tablet-3.png");
+      }
+    }
+  
+    &--third {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(58, 198, 231, 0) 80%,
+          #3ac6e7 100%
+        ),
+        url("../assets/img/bg-img-bloor-3@3x.jpg");
+      top: auto;
+      bottom: 0;
+      background-size: cover;
+      background-position: 50% 0;
+  
+      @media screen and (min-width: 1360px) and (max-width: 1360px) and (min-height: 690px) and (max-height: 690px) {
+        background-size: 100%;
+        background-position: center top;
+      }
+  
+      @include media("<phone") {
+        .home-wrapp--home & {
+          bottom: 0px;
+        }
+      }
+  
+      @include media("<tablet") {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(58, 198, 231, 0) 80%,
+            #3ac6e7 100%
+          ),
+          url("../assets/img/home-tablet-4.png");
+      }
+    }
+  
+    &.show {
+      opacity: 1 !important;
+      z-index: 10;
+    }
+  
+    &.hide {
+      opacity: 0;
+    }
+  
+    @include media("<phone") {
+      background-size: 100%;
+      background-position: center left 46%;
+      .home-wrapp--home & {
+        height: 146px;
+      }
+    }
+  }
+  
+  .home-title__wrap {
+    position: absolute;
+    z-index: 10;
+    top: 43%;
+    transform: translate(0, -50%);
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transition: all 0.5s ease;
+    @include media("<phone") {
+      position: relative;
+      top: 0;
+      transform: none;
+      height: 90vh;
+      height: calc(var(--vh, 1vh) * 90);
+      background-image: url("../assets/img/HeroImage00_Mobile.jpeg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  
+    .screentest & {
+      //max-height: 718px;
+      @include media("<phone") {
+        max-height: 510px;
+        transform: none;
+        top: 0;
+      }
+    }
+  }
+  
+  .home-title__text {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+  
+    .screentest & {
+      @include media("<phone") {
+        margin-top: 210px;
+      }
+    }
+  
+    strong {
+      font-weight: 800;
+    }
+  
+    @include media(">largeDesktop") {
+      font-size: 54px;
+    }
+    @include media("<tablet") {
+      font-size: 30px;
+    }
+    @include media("<phone") {
+      font-size: 24px;
+      max-width: 90%;
+      margin: auto;
+      margin-top: 35vh;
+      margin-top: calc(var(--vh, 1vh) * 35);
+  
+      br:not(.br-save) {
+        display: none;
+      }
+    }
+  }
+  
+  .home-switcher-wrapp {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    justify-content: space-around;
+    z-index: 10;
+    @include media("<phone") {
+      width: 100%;
+      margin-left: 0;
+      flex-direction: column;
+      z-index: 50;
+      position: relative;
+    }
+  
+    &--hovered {
+      .home-switcher {
+        background-color: transparent;
+      }
+    }
+  }
+  
+  .home-switcher__container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    padding-top: 45px;
+    padding-bottom: 25px;
+    @include media("<tablet") {
+      padding-bottom: 75px;
+    }
+    @include media("<phone") {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      margin-left: 0;
+      flex-direction: column;
+      z-index: 50;
+      position: relative;
+      padding: 0 24px;
+      height: 100%;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  
+  .home-switcher {
+    width: 33.333%;
+    background-color: rgba(#3ac6e7, 0.7);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: transparent;
+  
+      .home_title,
+      .home_footnote {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+  
+        @include media("<phone") {
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+        }
+      }
+  
+      .home_learn {
+        transform: translateY(-55px);
+      }
+  
+      .home_learn__icon-mob {
+        @include media("<phone") {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+      }
+  
+      .screentest & {
+        transition: none;
+      }
+    }
+  
+    &--first {
+      @include media("<phone") {
+        background-image: url("../assets/img/HeroImage01_Mobile.jpeg");
+        background-position-y: 50% !important;
+        background-size: 100% !important;
+      }
+    }
+  
+    &--second {
+      @include media("<phone") {
+        background-image: url("../assets/img/HeroImage02_Mobile.jpg");
+      }
+    }
+  
+    &--third {
+      @include media("<phone") {
+        background-image: url("../assets/img/bg-img-bloor-3@3x.jpg");
+        background-position: center bottom;
+      }
+    }
+  
+    @include media("<phone") {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      z-index: 10;
+      padding: 0 !important;
+      height: 140px;
+      //background-color: rgba(#3ac6e7, 0.7);
+      position: relative;
+  
+      &::before {
+        content: "";
+        background-image: linear-gradient(
+          to bottom,
+          rgba(#3ac6e7, 0.7),
+          rgba(#002831, 0.7) 100%
+        );
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.3;
+      }
+  
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.15;
+        background-color: #3ac6e7;
+        z-index: -1;
+      }
+    }
+  }
+  
+  .home-info {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    //
+    opacity: 0;
+  
+    @media screen and (max-width: 600px) {
+      position: absolute;
+      top: 60px;
+      opacity: 1;
+    }
+  
+    .screentest & {
+      opacity: 1;
+    }
+  }
+  
+  .home-info__title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 72px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    @include media("<tablet") {
+      font-size: 60px;
+    }
+    @include media("<smallTablet") {
+      font-size: 47px;
+    }
+    @include media("<phone") {
+      font-size: 32px;
+    }
+    @media screen and (max-width: 600px) {
+      font-size: 24px;
+    }
+  }
+  
+  .swipe-next {
+    position: absolute;
+    top: 33vh;
+    top: calc(var(--vh, 1vh) * 33);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 33px;
+    display: block;
+  
+    .screentest & {
+      @include media("<phone") {
+        top: 200px;
+      }
+    }
+  
+    &__arrow {
+      width: 33px;
+      height: auto;
+    }
+  }
+  
+  .home_title {
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    transition: all 0.3s ease;
+  
+    @include media(">largeDesktop") {
+      font-size: 28px;
+    }
+    @include media("<tablet") {
+      font-size: 16px;
+    }
+  }
+  
+  .home_footnote {
+    font-size: 10px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    bottom: -24px;
+    transition: all 0.3s ease;
+    @include media(">largeDesktop") {
+      font-size: 11px;
+    }
+    @include media("<tablet") {
+      font-size: 9px;
+    }
+    @include media("<phone") {
+      font-size: 10px;
+      text-align: center;
+      padding-top: 20px;
+      position: static;
+    }
+  }
+  
+  .content-footer_home_footnote {
+    position: relative;
+    bottom: 0;
+    padding-top: 0;
+    margin-bottom: 25px;
+    @include media("<phone") {
+      margin-bottom: 0;
+    }
+  }
+  
+  .home_footnote-page {
+    font-size: 10px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  
+    @include media(">largeDesktop") {
+      font-size: 14px;
+    }
+    @include media("<phone") {
+      padding-top: 20px;
+      margin-top: 0;
+    }
+  
+    .home-wrapp--patients & {
+      margin-top: 0;
+    }
+  }
+  
+  .home_learn {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    margin-top: 40px;
+    transition: all 0.5s ease;
+    @include media(">largeDesktop") {
+      font-size: 20px;
+    }
+    @include media("<smallTablet") {
+      font-size: 12px;
+    }
+    @include media("<phone") {
+      display: none;
+    }
+  
+    &__icon {
+      margin-left: 15px;
+    }
+  }
+  
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+  
+  .fade-switcher-enter-active,
+  .fade-switcher-leave-active {
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .fade-switcher-enter,
+  .fade-switcher-leave-to {
+    opacity: 0;
+  }
+  
+  .home-switcher__container-inner {
+    position: relative;
+  
+    @include media("<phone") {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+  
+  .home_learn__icon-mob {
+    display: none;
+  
+    @include media("<phone") {
+      display: block;
+      transition: all 0.3s ease;
+    }
+  }
+  
+  .section-content--home-title {
+    position: relative;
+    padding: 0 !important;
+  
+    @include media("<phone") {
+      width: 100% !important;
+    }
+  }
+  
+  .scroll-next__arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+  
+  .scroll-next__arrow-move {
+    position: absolute;
+    bottom: 54px;
+    left: 5px;
+  
+    @include media("<desktop") {
+      bottom: 38px;
+    }
+  }
+  
+  .home-wrapp-content {
+    .scroll-next__arrow {
+      opacity: 1;
+      visibility: visible;
+      @include media("<tablet") {
+        visibility: hidden;
+      }
+    }
+  }
+  
+  .swipe-icon-mob {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: none;
+  
+    @include media("<phone") {
+      display: block;
+    }
+  
+    @media screen and (max-width: 600px) {
+      bottom: 40px;
+      left: 40px;
+    }
+  }
+  
+  .animation-swipe {
+    animation: animationSwipe 2s infinite linear;
+  }
+  
+  @keyframes animationSwipe {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+  
+    30% {
+      opacity: 1;
+    }
+  
+    50% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  
+    70% {
+      opacity: 1;
+    }
+  
+    to {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+  }
+  
+  .home-pages-bg--complicated {
+    .home-pages-bg__image--first {
+      background-position: 50% 12%;
+    }
+  }
+  
+  .home-pages-bg--phenotypes {
+    .home-pages-bg__image--second {
+      background-position: 50% 30%;
+    }
+  }
+  
+  .home-wrapp--whypsma {
+    .home-pages-bg__image--third {
+      background-position: 50% 0%;
+    }
+  
+    .home-info__title {
+      padding: 0 20px;
+    }
+  }
+  
+  .swipe-next__icon {
+    width: 57px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: none;
+  
+    @include media("<tablet") {
+      display: flex;
+      bottom: 60px;
+      z-index: 15;
+      .home-pages-bg--home & {
+        display: none;
+      }
+    }
+  
+    @include media("<phone") {
+      bottom: 20px;
+    }
+  
+    @media screen and (max-width: 600px) {
+      bottom: 40px;
+      left: 40px;
+    }
+  }
+  
+  .swipe-next__arrow-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
